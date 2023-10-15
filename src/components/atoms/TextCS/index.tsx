@@ -6,7 +6,7 @@ interface TextProps {
   children?: React.ReactNode;
 }
 const TextCS = ({className, children}: TextProps) => {
-  return <Text className={`${className} font-400`}>{children}</Text>;
+  return <Text className={`font-400 ${className}`}>{children}</Text>;
 };
 
 export default TextCS;

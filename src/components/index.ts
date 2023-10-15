@@ -1,3 +1,1 @@
-import TextCS from './TextCS';
-
-export {TextCS};
+export * from './atoms';

@@ -1,8 +1,7 @@
 import ICGetStarted1 from './get-started-1.png';
 import ICGetStarted2 from './get-started-2.png';
 import ICGetStarted3 from './get-started-3.png';
-import ICLogo from './logo.svg';
-import ICRock from './rock.svg';
+import ICLogo from './logo.png';
 import ICPop from './pop.svg';
 import ICPause from './pause.svg';
 import ICNext from './next.svg';
@@ -33,6 +32,7 @@ import ICNotif from './notif.svg';
 import ICLanguage from './language.svg';
 import ICPrivasi from './privasi.svg';
 import ICLogout from './logout.svg';
+import ICRock from './rock.svg';
 
 export {
   ICGetStarted1,
@@ -40,7 +40,6 @@ export {
   ICGetStarted3,
   ICLogo,
   ICPop,
-  ICRock,
   ICMelodi,
   ICNext,
   ICPrev,
@@ -70,4 +69,5 @@ export {
   ICNotif,
   ICLanguage,
   ICPrivasi,
+  // ICRock,
 };

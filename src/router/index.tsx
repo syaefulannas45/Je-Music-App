@@ -1,14 +1,23 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Splash} from '../screens';
+import {GetStarted, Splash} from '../screens';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  splash: undefined;
+  getstarted: undefined;
+};
+const Stack = createNativeStackNavigator<RootStackParamList>();
 const Router = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="splash"
         component={Splash}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="getstarted"
+        component={GetStarted}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
