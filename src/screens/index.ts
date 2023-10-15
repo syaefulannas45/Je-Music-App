@@ -1,3 +1,4 @@
 import Splash from './Splash';
 import GetStarted from './GetStarted';
-export {Splash,GetStarted};
+import RegisterScreen from './Register';
+export {Splash,GetStarted,RegisterScreen};

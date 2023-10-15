@@ -1,3 +1,4 @@
-import TextCS from "./TextCS";
+import TextCS from './TextCS';
+import ButtonCS from './Button';
 
-export {TextCS}
+export {TextCS, ButtonCS};
