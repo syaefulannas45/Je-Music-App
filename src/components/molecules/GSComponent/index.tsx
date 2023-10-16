@@ -41,7 +41,6 @@ const GSComponent = ({navigation}: GetStartedScreenNavigationProp) => {
   }, [isLastSlide]);
   const handleIndexChange = (index: number) => {
     setCurrentIndex(index);
-    console.log(index);
   };
   return (
     <View className="items-center justify-betwee flex-1">

@@ -11,7 +11,9 @@ const GetStarted = ({navigation, route}: GetStartedScreenNavigationProp) => {
       start={{x: 0, y: 0}}
       end={{x: 0, y: 1}}
       className="w-full h-screen flex-1">
-      <TouchableOpacity className="bg-highlight-400 w-[20%] flex items-center  rounded-full mx-4 my-4 py-1">
+      <TouchableOpacity
+        className="bg-highlight-400 w-[20%] flex items-center  rounded-full mx-4 my-4 py-1"
+        onPress={() => navigation.replace('register')}>
         <TextCS className="text-text-300">Skip</TextCS>
       </TouchableOpacity>
       <GSComponent navigation={navigation} route={route} />

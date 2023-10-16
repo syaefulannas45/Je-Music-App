@@ -16,7 +16,7 @@ import ICSearchActive from './search-active.svg';
 import ICNotificationActive from './notification-active.svg';
 import ICSettingActive from './setting-active.svg';
 import ICGoogle from './google.svg';
-import ICSongs from './songs.svg';
+import ICSongs from './songs.png';
 import ICSync from './sync.svg';
 import ICShuffle from './shuffle.svg';
 import ICLove from './love.svg';
@@ -32,7 +32,7 @@ import ICNotif from './notif.svg';
 import ICLanguage from './language.svg';
 import ICPrivasi from './privasi.svg';
 import ICLogout from './logout.svg';
-import ICRock from './rock.svg';
+
 
 export {
   ICGetStarted1,
@@ -69,5 +69,4 @@ export {
   ICNotif,
   ICLanguage,
   ICPrivasi,
-  // ICRock,
 };
