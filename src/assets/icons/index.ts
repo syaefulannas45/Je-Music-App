@@ -32,7 +32,8 @@ import ICNotif from './notif.svg';
 import ICLanguage from './language.svg';
 import ICPrivasi from './privasi.svg';
 import ICLogout from './logout.svg';
-
+import ICProfile from './profile.png';
+import ICAddPhoto from './add-photo.png';
 
 export {
   ICGetStarted1,
@@ -69,4 +70,6 @@ export {
   ICNotif,
   ICLanguage,
   ICPrivasi,
+  ICProfile,
+  ICAddPhoto,
 };
