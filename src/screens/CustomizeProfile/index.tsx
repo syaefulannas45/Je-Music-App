@@ -3,7 +3,7 @@ import {ButtonCS, Gap, Input, TextCS} from '../../components';
 import LinearGradient from 'react-native-linear-gradient';
 import {Image, TouchableOpacity, View} from 'react-native';
 import {ICAddPhoto, ICName, ICProfile, ICUsername} from '../../assets';
-import {Text} from 'react-native-svg';
+
 
 const CustomizeProfileScreen = () => {
   return (
