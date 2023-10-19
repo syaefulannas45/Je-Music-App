@@ -3,6 +3,7 @@ import React from 'react';
 import {
   CustomizeProfileScreen,
   GetStarted,
+  LoginScreen,
   RegisterScreen,
   Splash,
 } from '../screens';
@@ -12,6 +13,7 @@ export type RootStackParamList = {
   getstarted: undefined;
   register: undefined;
   customizeprofile: undefined;
+  login: undefined;
 };
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Router = () => {
@@ -35,6 +37,11 @@ const Router = () => {
       <Stack.Screen
         name="customizeprofile"
         component={CustomizeProfileScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="login"
+        component={LoginScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
