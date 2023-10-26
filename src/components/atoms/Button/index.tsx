@@ -23,7 +23,7 @@ const ButtonCS = ({
       disabled={disabled}
       onPress={onPress}>
       {logo}
-      <Text className={`text-text-100 font-700 text-[32px] ${textStyle}`}>
+      <Text className={`${textStyle} text-text-100 font-700 text-[25px] `}>
         {children}
       </Text>
     </TouchableOpacity>

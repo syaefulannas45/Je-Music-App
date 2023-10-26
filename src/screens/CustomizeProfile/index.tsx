@@ -1,11 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ButtonCS, Gap, Input, TextCS} from '../../components';
 import LinearGradient from 'react-native-linear-gradient';
 import {Image, TouchableOpacity, View} from 'react-native';
 import {ICAddPhoto, ICName, ICProfile, ICUsername} from '../../assets';
 
-
+interface saveProfileState {
+  name: string;
+  username: string;
+  genre: string[];
+}
 const CustomizeProfileScreen = () => {
+  const [selected, setSelected] = useState<boolean>(false);
+  const [saveProfile, setSaveProfile] = useState<saveProfileState>({
+    name: '',
+    username: '',
+    genre: [],
+  });
+  const handleGenreSelection = (genre: string) => {
+    const selectedGenres = saveProfile.genre;
+    if (selectedGenres.includes(genre)) {
+      setSaveProfile({
+        ...saveProfile,
+        genre: selectedGenres.filter(item => item !== genre),
+      });
+      setSelected(!selected);
+    } else {
+      setSaveProfile({
+        ...saveProfile,
+        genre: [...selectedGenres, genre],
+      });
+      setSelected(!selected);
+    }
+  };
   return (
     <LinearGradient
       className="flex-1 px-4 pt-16"
@@ -33,26 +59,48 @@ const CustomizeProfileScreen = () => {
         Pilih Genre Music
       </TextCS>
       <Gap className="h-[20px]" />
-      <View className="flex flex-row space-x-[12px] flex-wrap">
-        <View className="max-w-[160px] border-2 border-white py-1 rounded-full px-[40px] mb-4">
+      <View className="flex flex-row flex-wrap">
+        <TouchableOpacity
+          className={`max-w-[160px]  py-1 rounded-full px-[40px] mb-4 mr-2 ${
+            saveProfile.genre.includes('Pop')
+              ? 'bg-highlight-100 border-none'
+              : 'border-2 border-white'
+          }`}
+          onPress={() => handleGenreSelection('Pop')}>
           <TextCS className="text-white text-[15px] text-center">Pop</TextCS>
-        </View>
-        <View className="max-w-[160px]  py-1 rounded-full px-[40px] mb-4 bg-highlight-100">
+        </TouchableOpacity>
+        <TouchableOpacity
+          className={`max-w-[160px]  py-1 rounded-full px-[40px] mb-4 mr-2 ${
+            saveProfile.genre.includes('Hip-Hop')
+              ? 'bg-highlight-100 border-none'
+              : 'border-2 border-white'
+          }`}
+          onPress={() => handleGenreSelection('Hip-Hop')}>
           <TextCS className="text-white text-[15px] text-center">
             Hip-Hop
           </TextCS>
-        </View>
-        <View className="max-w-[160px]  py-1 rounded-full px-[40px] mb-4 bg-highlight-100">
-          <TextCS className="text-white text-[15px] text-center">
-            Hip-Hop
-          </TextCS>
-        </View>
-        <View className="max-w-[160px] border-2 border-white py-1 rounded-full px-[40px] mb-4">
-          <TextCS className="text-white text-[15px] text-center">Pop</TextCS>
-        </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          className={`max-w-[160px]  py-1 rounded-full px-[40px] mb-4 mr-2 ${
+            saveProfile.genre.includes('Rock')
+              ? 'bg-highlight-100 border-none'
+              : 'border-2 border-white'
+          }`}
+          onPress={() => handleGenreSelection('Rock')}>
+          <TextCS className="text-white text-[15px] text-center">Rock</TextCS>
+        </TouchableOpacity>
+        <TouchableOpacity
+          className={`max-w-[160px]  py-1 rounded-full px-[40px] mb-4 mr-2 ${
+            saveProfile.genre.includes('Jazz')
+              ? 'bg-highlight-100 border-none'
+              : 'border-2 border-white'
+          }`}
+          onPress={() => handleGenreSelection('Jazz')}>
+          <TextCS className="text-white text-[15px] text-center">Jazz</TextCS>
+        </TouchableOpacity>
       </View>
       <Gap className="h-[20px]" />
-      <ButtonCS>Save Profile</ButtonCS>
+      <ButtonCS textStyle="text-[23px]">Save Profile</ButtonCS>
     </LinearGradient>
   );
 };
