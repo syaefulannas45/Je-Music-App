@@ -3,10 +3,16 @@ import React from 'react';
 import {
   CustomizeProfileScreen,
   GetStarted,
+  HomeScreen,
   LoginScreen,
+  NotificationScreen,
   RegisterScreen,
+  SearchScreen,
+  SettingScreen,
   Splash,
 } from '../screens';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {BottomNavigator} from '../components';
 
 export type RootStackParamList = {
   splash: undefined;
@@ -14,11 +20,44 @@ export type RootStackParamList = {
   register: undefined;
   customizeprofile: undefined;
   login: undefined;
+  mainapp: undefined;
+  home: undefined;
+  search: undefined;
+  notification: undefined;
+  setting: undefined;
 };
 const Stack = createNativeStackNavigator<RootStackParamList>();
+const Tab = createBottomTabNavigator<RootStackParamList>();
+
+const MainApp = () => {
+  return (
+    <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
+      <Tab.Screen
+        name="home"
+        component={HomeScreen}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="search"
+        component={SearchScreen}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="notification"
+        component={NotificationScreen}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="setting"
+        component={SettingScreen}
+        options={{headerShown: false}}
+      />
+    </Tab.Navigator>
+  );
+};
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="customizeprofile">
+    <Stack.Navigator>
       <Stack.Screen
         name="splash"
         component={Splash}
@@ -42,6 +81,11 @@ const Router = () => {
       <Stack.Screen
         name="login"
         component={LoginScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="mainapp"
+        component={MainApp}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -1,13 +1,19 @@
 import React, {useState} from 'react';
-import {ButtonCS, Gap, Header, Input, TextCS} from '../../components';
+import {ButtonCS, Gap, Header, Input, Link, TextCS} from '../../components';
 import LinearGradient from 'react-native-linear-gradient';
 import {ICEmail, ICGoogle, ICPassword} from '../../assets';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {auth, db} from '../../config';
 import {ref, set} from 'firebase/database';
 import {View} from 'react-native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../router';
 
-const RegisterScreen = () => {
+type RegisterScreenNavigationProp = NativeStackScreenProps<
+  RootStackParamList,
+  'register'
+>;
+const RegisterScreen = ({navigation}: RegisterScreenNavigationProp) => {
   const [dataReg, setDataReg] = useState({
     email: '',
     password: '',
@@ -69,11 +75,15 @@ const RegisterScreen = () => {
           Sign With Google
         </ButtonCS>
       </View>
-      <View>
-        <TextCS className="text-center mt-4 text-text-300">
-          Already have an account ?{' '}
-          <TextCS className=" text-text-200">Sign In</TextCS>
-        </TextCS>
+      <View className="flex flex-row justify-center items-cente space-x-2  mt-4">
+        <TextCS className="text-text-300">Already have an account ?</TextCS>
+        <View>
+          <Link
+            onPress={() => navigation.navigate('login')}
+            className=" text-text-200"
+            title="Sign In"
+          />
+        </View>
       </View>
     </LinearGradient>
   );

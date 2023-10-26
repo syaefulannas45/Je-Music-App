@@ -3,13 +3,19 @@ import {ButtonCS, Gap, Input, TextCS} from '../../components';
 import LinearGradient from 'react-native-linear-gradient';
 import {Image, TouchableOpacity, View} from 'react-native';
 import {ICAddPhoto, ICName, ICProfile, ICUsername} from '../../assets';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../router';
 
 interface saveProfileState {
   name: string;
   username: string;
   genre: string[];
 }
-const CustomizeProfileScreen = () => {
+type SplashScreenNavigationProp = NativeStackScreenProps<
+  RootStackParamList,
+  'customizeprofile'
+>;
+const CustomizeProfileScreen = ({navigation}: SplashScreenNavigationProp) => {
   const [selected, setSelected] = useState<boolean>(false);
   const [saveProfile, setSaveProfile] = useState<saveProfileState>({
     name: '',

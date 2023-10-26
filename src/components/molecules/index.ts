@@ -1,3 +1,3 @@
-import GSComponent from "./GSComponent";
-
-export {GSComponent}
+import GSComponent from './GSComponent';
+import BottomNavigator from './BottomNavigator';
+export {GSComponent, BottomNavigator};
