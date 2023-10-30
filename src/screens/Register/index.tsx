@@ -23,17 +23,18 @@ const RegisterScreen = ({navigation}: RegisterScreenNavigationProp) => {
   };
   const handleRegister = async () => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        dataReg.email,
-        dataReg.password,
-      );
-      const userDatabaseRef = ref(db, `users/${userCredential.user.uid}`);
-      const newDataUser = {
-        email: dataReg.email,
-        uid: userCredential.user.uid,
-      };
-      await set(userDatabaseRef, newDataUser);
+      navigation.replace('customizeprofile');
+      // const userCredential = await createUserWithEmailAndPassword(
+      //   auth,
+      //   dataReg.email,
+      //   dataReg.password,
+      // );
+      // const userDatabaseRef = ref(db, `users/${userCredential.user.uid}`);
+      // const newDataUser = {
+      //   email: dataReg.email,
+      //   uid: userCredential.user.uid,
+      // };
+      // await set(userDatabaseRef, newDataUser);
     } catch (error) {}
   };
   return (

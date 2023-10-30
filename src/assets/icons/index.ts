@@ -34,6 +34,7 @@ import ICPrivasi from './privasi.svg';
 import ICLogout from './logout.svg';
 import ICProfile from './profile.png';
 import ICAddPhoto from './add-photo.png';
+import ICRock from './rock.svg';
 
 export {
   ICGetStarted1,
@@ -72,4 +73,5 @@ export {
   ICPrivasi,
   ICProfile,
   ICAddPhoto,
+  ICRock,
 };

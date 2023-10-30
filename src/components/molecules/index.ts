@@ -1,3 +1,5 @@
 import GSComponent from './GSComponent';
 import BottomNavigator from './BottomNavigator';
-export {GSComponent, BottomNavigator};
+import List from './List';
+import Card from './Card';
+export {GSComponent, BottomNavigator, List, Card};
