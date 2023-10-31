@@ -3,7 +3,7 @@ import ICGetStarted2 from './get-started-2.png';
 import ICGetStarted3 from './get-started-3.png';
 import ICLogo from './logo.png';
 import ICPop from './pop.svg';
-import ICPause from './pause.svg';
+import ICPlay from './play.svg';
 import ICNext from './next.svg';
 import ICPrev from './prev.svg';
 import ICMelodi from './melodi.svg';
@@ -35,6 +35,7 @@ import ICLogout from './logout.svg';
 import ICProfile from './profile.png';
 import ICAddPhoto from './add-photo.png';
 import ICRock from './rock.svg';
+import ICBack from './back.svg';
 
 export {
   ICGetStarted1,
@@ -45,7 +46,7 @@ export {
   ICMelodi,
   ICNext,
   ICPrev,
-  ICPause,
+  ICPlay,
   ICHomeActive,
   ICSearchActive,
   ICNotificationActive,
@@ -74,4 +75,5 @@ export {
   ICProfile,
   ICAddPhoto,
   ICRock,
+  ICBack,
 };

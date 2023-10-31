@@ -7,6 +7,7 @@ import HomeScreen from './Home';
 import SearchScreen from './Search';
 import NotificationScreen from './Notification';
 import SettingScreen from './Setting';
+import PlayMusicScreen from './PlayMusic';
 export {
   Splash,
   GetStarted,
@@ -17,4 +18,5 @@ export {
   SearchScreen,
   NotificationScreen,
   SettingScreen,
+  PlayMusicScreen,
 };

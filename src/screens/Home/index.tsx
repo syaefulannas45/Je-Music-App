@@ -4,13 +4,19 @@ import {Card, Gap, Header, List, TextCS} from '../../components';
 import {ICPop, ICRock} from '../../assets';
 import {get, ref} from 'firebase/database';
 import {db} from '../../config';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../router';
 
 interface SongsLocalState {
   songTitle: string;
   artist: string;
   image: string;
 }
-const HomeScreen = () => {
+type HomeScreenNavigationProp = NativeStackScreenProps<
+  RootStackParamList,
+  'home'
+>;
+const HomeScreen = ({navigation}: HomeScreenNavigationProp) => {
   const [songsLocal, setSongsLocal] = useState<SongsLocalState[]>([]);
   useEffect(() => {
     getTopLocalSongs();
@@ -68,6 +74,7 @@ const HomeScreen = () => {
               artist={item.artist}
               nameSong={item.songTitle}
               uriPhoto={item.image}
+              onPress={() => navigation.navigate('playmusic', item)}
             />
           ))}
         </View>

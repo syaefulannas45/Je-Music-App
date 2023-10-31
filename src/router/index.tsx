@@ -6,6 +6,7 @@ import {
   HomeScreen,
   LoginScreen,
   NotificationScreen,
+  PlayMusicScreen,
   RegisterScreen,
   SearchScreen,
   SettingScreen,
@@ -25,6 +26,7 @@ export type RootStackParamList = {
   search: undefined;
   notification: undefined;
   setting: undefined;
+  playmusic: undefined | object;
 };
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<RootStackParamList>();
@@ -86,6 +88,11 @@ const Router = () => {
       <Stack.Screen
         name="mainapp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="playmusic"
+        component={PlayMusicScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

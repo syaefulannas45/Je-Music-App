@@ -1,14 +1,31 @@
-import {Image, View} from 'react-native';
+import {Image, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import TextCS from '../TextCS';
-import {ICProfile, ICSongs} from '../../../assets';
+import {ICBack, ICBar, ICProfile, ICSongs} from '../../../assets';
 
 interface HeaderProps {
   title?: string;
   desc?: string;
-  type?: 'withPhoto';
+  type?: 'withPhoto' | 'playMusic';
+  onPress?: () => void;
 }
 const Header = ({title, desc, type}: HeaderProps) => {
+  if (type === 'playMusic')
+    return (
+      <View className="flex flex-row justify-between items-center">
+        <TouchableOpacity>
+          <ICBack />
+        </TouchableOpacity>
+        <View>
+          <TextCS className="text-[24px] font-600 text-text-500">
+            Play Music
+          </TextCS>
+        </View>
+        <TouchableOpacity>
+          <ICBar />
+        </TouchableOpacity>
+      </View>
+    );
   if (type === 'withPhoto')
     return (
       <View className="flex flex-row space-x-4 items-center">
